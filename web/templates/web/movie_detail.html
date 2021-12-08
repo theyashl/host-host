@@ -1,0 +1,32 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        video {
+            width: 60%;
+            /*width: 640px;
+            height: 360px;*/
+            margin-top: 3%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+    <div>
+        <video id="videoPlayer" controls></video>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.1.0/dash.all.min.js"></script>
+    <script>
+        (function(){
+            var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+            url = "{% static movie.manifest %}";
+            console.log(url);
+            //silicon valley s1e1
+            //url = "https://wcdn-roci-usea.streaming.media.azure.net/c500c9cd-bdf6-47a4-9c4c-87f48f88b894/svs1e1.ism/manifest(format=mpd-time-csf)"
+            //url = "./manifest.mpd"
+            //url = "https://wcdn-roci-usea.streaming.media.azure.net/659b93de-8834-47c0-9458-16c7fee6dfde/Big_Buck_Bunny_1080_10s_30MB.ism/manifest(format=mpd-time-csf)"
+            var player = dashjs.MediaPlayer().create();
+            player.initialize(document.querySelector("#videoPlayer"), url, true);
+        })();
+    </script>
+{% endblock %}

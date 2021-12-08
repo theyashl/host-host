@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/movie.css' %}">
+    <meta charset="UTF-8">
+    <title>Movie</title>
+</head>
+<body>
+    <header>
+        <h1><a href="/">Stream Point</a></h1>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
