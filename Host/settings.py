@@ -84,7 +84,14 @@ WSGI_APPLICATION = 'Host.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dcgedv7suvfu99',
+        'USER': 'zslidxjfnqjcbw',
+        'PASSWORD': 'cc8faf747e963f778b657da260e65c92c9e3bf6bcbbd802d6fb0ae9993cc5dc3',
+        'HOST': 'ec2-54-195-246-55.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+    }
 }
 
 
