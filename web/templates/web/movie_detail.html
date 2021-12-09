@@ -19,7 +19,7 @@
     <script>
         (function(){
             var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
-            url = "{% static movie.manifest %}";
+            url = "{{ movie.manifest }}";
             console.log(url);
             //silicon valley s1e1
             //url = "https://wcdn-roci-usea.streaming.media.azure.net/c500c9cd-bdf6-47a4-9c4c-87f48f88b894/svs1e1.ism/manifest(format=mpd-time-csf)"
